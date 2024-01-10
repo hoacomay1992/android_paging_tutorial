@@ -55,4 +55,28 @@ Các thành phần của thư viện Paging hoạt động trong ba tầng ứng
 - The repository layer
 - The ViewModel layer
 - The UI layer
-  ![](images/paging_architecture.png)
+
+![](images/paging_architecture.png)
+Phần này mô tả các thành phần thư viện phân trang hoạt động ở mỗi lớp và cách chúng phối hợp với
+nhau để tải và hiển thị dữ liệu phân trang.
+
+### Repository layer
+
+Các paging library component chính trong repository layer
+là [PagingSource](https://developer.android.com/reference/kotlin/androidx/paging/PagingSource). Mỗi
+object PagingSource xác định một nguồn dữ liệu và cách truy xuất dữ liệu từ nguồn đó. Đối tượng
+PagingSource có thể tải dữ liệu từ bất kỳ nguồn nào, bao gồm cả nguồn từ network và local database.
+
+Một paging library component khác mà bạn có thể sử dụng là RemoteMediator. Đối tượng
+RemoteMediator xử lý phân trang từ layer data source, chẳng hạn như nguồn dữ liệu network có bộ
+nhớ đệm cơ sở dữ liệu cục bộ (local database cache)..
+
+### ViewModel layer
+
+Thành phần [Pager](https://developer.android.com/reference/kotlin/androidx/paging/Pager) cung cấp
+public API để xây dựng các instance PagingData được exposed trong các luồng phản ứng (reactive
+streans), dựa trên đối tượng PagingSource và đối tượng cấu
+hình [PagingConfig](https://developer.android.com/reference/kotlin/androidx/paging/PagingConfig).
+Thành phần kết nối lớp ViewModel với giao diện người dùng là PagingData. Đối
+tượng [PagingData](https://developer.android.com/reference/kotlin/androidx/paging/PagingData) là nơi
+chứa snapshot dữ liệu được phân trang. Nó truy vấn một đối tượng PagingSource và lưu trữ kết quả.
