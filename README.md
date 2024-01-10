@@ -80,3 +80,13 @@ hình [PagingConfig](https://developer.android.com/reference/kotlin/androidx/pag
 Thành phần kết nối lớp ViewModel với giao diện người dùng là PagingData. Đối
 tượng [PagingData](https://developer.android.com/reference/kotlin/androidx/paging/PagingData) là nơi
 chứa snapshot dữ liệu được phân trang. Nó truy vấn một đối tượng PagingSource và lưu trữ kết quả.
+
+### UI layer
+
+Paging library component chính trong UI layer
+là [PagingDataAdapter](https://developer.android.com/reference/kotlin/androidx/paging/PagingDataAdapter),
+một [RecyclerView](https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView)
+adapter xử lý dữ liệu được phân trang.
+Ngoài ra, bạn có thể sử dụng thành
+phần [AsyncPagingDataDiffer](https://developer.android.com/reference/kotlin/androidx/paging/AsyncPagingDataDiffer)
+đi kèm để xây dựng bộ điều hợp tùy chỉnh của riêng mình.
