@@ -47,3 +47,12 @@ implementation("androidx.paging:paging-guava:$paging_version")
 implementation("androidx.paging:paging-compose:3.3.0-alpha02")
 }
 ```
+
+## Library architecture
+
+Các thành phần của thư viện Paging hoạt động trong ba tầng ứng dụng của bạn:
+
+- The repository layer
+- The ViewModel layer
+- The UI layer
+  ![](images/paging_architecture.png)
