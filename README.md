@@ -4,7 +4,8 @@
   hoặc network. Cách tiếp cận này cho phép ứng dụng của bạn sử dụng cả băng thông mạng và tài nguyên
   hệ thống hiệu quả hơn. Các thành phần của thư viện Paging được thiết kế để phù hợp với
   [Android app architeture](https://developer.android.com/topic/architecture) được đề xuất, tích hợp
-  hoàn hảo với các thành phần Jetpack khác và cung cấp khả năng hỗ trợ Kotlin hạng nhất.
+  hoàn hảo với các thành phần Jetpack khác và cung cấp khả năng hỗ trợ Kotlin hạng nhất
+  (first-class).
 
 ## Lợi ích của việc sử dụng Paging library
 
@@ -18,3 +19,31 @@ Paging library bao gồm các tính năng sau:
   về cuối dữ liệu đã tải
 - First-class support cho các coroutine và flows Kotlin cũng như LiveData và RxJava.
 - Hỗ trợ tích hợp để xử lý lỗi, bao gồm khả năng làm mới (refresh) và thử lại (retry capabilities).
+
+## Setup
+
+Để import paging component vào ứng dụng Android, hãy thêm các phần phụ thuộc sau vào tệp
+build.gradle của ứng dụng:
+
+```
+dependencies {
+val paging_version = "3.2.1"
+
+implementation("androidx.paging:paging-runtime:$paging_version")
+
+// alternatively - without Android dependencies for tests
+testImplementation("androidx.paging:paging-common:$paging_version")
+
+// optional - RxJava2 support
+implementation("androidx.paging:paging-rxjava2:$paging_version")
+
+// optional - RxJava3 support
+implementation("androidx.paging:paging-rxjava3:$paging_version")
+
+// optional - Guava ListenableFuture support
+implementation("androidx.paging:paging-guava:$paging_version")
+
+// optional - Jetpack Compose integration
+implementation("androidx.paging:paging-compose:3.3.0-alpha02")
+}
+```
