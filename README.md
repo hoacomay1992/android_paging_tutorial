@@ -90,3 +90,15 @@ adapter xử lý dữ liệu được phân trang.
 Ngoài ra, bạn có thể sử dụng thành
 phần [AsyncPagingDataDiffer](https://developer.android.com/reference/kotlin/androidx/paging/AsyncPagingDataDiffer)
 đi kèm để xây dựng bộ điều hợp tùy chỉnh của riêng mình.
+
+# Load và hiển thị paged data
+
+Thư viện phân trang cung cấp các khả năng mạnh mẽ để tải và hiển thị dữ liệu phân trang từ larger
+dataset. Hướng dẫn này trình bày cách sử dụng thư viện Phân trang để thiết lập luồng dữ liệu phân
+trang từ nguồn dữ liệu mạng và hiển thị nó trong RecyclerView.
+
+## Định nghĩa một data source
+
+Bước đầu tiên là xác định cách triển khai PagingSource để xác định nguồn dữ liệu. Lớp API
+PagingSource bao gồm phương thức Load() mà bạn ghi đè để chỉ ra cách truy xuất dữ liệu đã phân trang
+từ nguồn dữ liệu tương ứng.
