@@ -1,4 +1,4 @@
-package cmc.ati.pagingtutorial.screens.nowplaying
+package cmc.ati.pagingtutorial.ui.screens.nowplaying
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -32,7 +32,7 @@ class NowPlayingViewModel @Inject constructor(private val repo: MovieRepository)
     var selectedGenre = mutableStateOf(Genre(null, AppConstant.DEFAULT_GENRE_ITEM))
     val filterData = MutableStateFlow<GenreId?>(null)
 
-    val nowPlayingData = filterData.flatMapLatest { genreId ->
+    val nowPlayingMovies = filterData.flatMapLatest { genreId ->
         repo.nowPlayingPagingDataSource(genreId?.genreId)
     }.cachedIn(viewModelScope)
 }

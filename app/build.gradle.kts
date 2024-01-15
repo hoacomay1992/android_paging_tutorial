@@ -65,6 +65,13 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+
+
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+
+    // compose navigation
+    implementation("androidx.navigation:navigation-compose:2.7.6")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
     //DI Hilt
     implementation("com.google.dagger:hilt-android:2.48.1")
     kapt("com.google.dagger:hilt-android-compiler:2.48.1")
@@ -73,11 +80,20 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11")
 
+    // coil with animation
+    val landScapistVersion = "2.2.13"
+    implementation("com.github.skydoves:landscapist-coil:$landScapistVersion")
+    implementation("com.github.skydoves:landscapist-placeholder:$landScapistVersion")
+    implementation("com.github.skydoves:landscapist-animation:$landScapistVersion")
+    implementation("com.github.skydoves:landscapist-transformation:$landScapistVersion")
+
     val pagingVersion = "3.2.1"
     implementation("androidx.paging:paging-compose:$pagingVersion")
 
     // timber log
     implementation("com.jakewharton.timber:timber:5.0.1")
+
+    implementation("com.google.code.gson:gson:2.10.1")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
